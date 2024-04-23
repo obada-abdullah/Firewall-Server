@@ -1,48 +1,4 @@
-Certainly! Let's build your firewall server in Python step-by-step. Given the complexity of this project, I'll guide you through setting up the project structure, implementing initial functionalities, and testing them. You will learn how to handle packet filtering, IP management, and logging.
 
-### Step 1: Setting Up the Project Environment
-
-First, ensure Python 3.6 or later is installed. Use a virtual environment for your project to manage dependencies.
-
-1. **Create a Virtual Environment**:
-   Open a terminal and run:
-
-   ```bash
-   python3 -m venv firewall_env
-   source firewall_env/bin/activate  # On Unix/Linux
-   firewall_env\Scripts\activate     # On Windows
-   ```
-
-2. **Install Required Libraries**:
-   You'll need `scapy` for packet manipulation and `netfilterqueue` to interact with iptables queue.
-
-   ```bash
-   pip install scapy netfilterqueue
-   ```
-
-### Step 2: Project Structure Setup
-
-Create the directory structure as discussed previously. You can use terminal commands or your file explorer to create these directories and files.
-
-### Step 3: Implementing Packet Filtering
-
-1. **Create the `packet_filter.py`**:
-   Navigate to the `src` directory, create `packet_filter.py`, and add the following code:
-
-   ```python
-   from scapy.all import IP, TCP
-
-   def filter_packet(packet):
-       # Block packets from a specific IP
-       if packet[IP].src == '192.168.1.100':
-           print("Blocking packet from IP: 192.168.1.100")
-           return False
-       # Allow HTTP traffic
-       if packet[TCP].dport == 80:
-           print("Allowing HTTP traffic")
-           return True
-       return True
-   ```
 
 2. **Create the `main.py`**:
    This file will set up the packet sniffing and utilize the `packet_filter`.
