@@ -2,8 +2,6 @@ import argparse
 from packet_filter import add_rule, remove_rule, list_rules
 from port_manager import add_port_rule, remove_port_rule, list_port_rules
 from rate_limiter import add_rate_limit, remove_rate_limit, list_rate_limits
-from traffic_logger import enable_traffic_logging, disable_traffic_logging
-
 
 def main():
     parser = argparse.ArgumentParser(description="Manage Firewall Rules")
