@@ -54,6 +54,7 @@ def main():
             remove_rule(args.ip, args.action)
         elif args.command == 'list':
             list_rules()
+            
     elif args.category == 'port':
         if args.port_command == 'add':
             add_port_rule(args.port, args.action)
