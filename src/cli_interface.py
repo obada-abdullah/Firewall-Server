@@ -2,6 +2,7 @@ import argparse
 from packet_filter import add_rule, remove_rule, list_rules
 from port_manager import add_port_rule, remove_port_rule, list_port_rules
 from rate_limiter import add_rate_limit, remove_rate_limit, list_rate_limits
+from traffic_logger import enable_traffic_logging, disable_traffic_logging
 
 
 def main():
@@ -47,6 +48,19 @@ def main():
     rate_list_parser = rate_subparsers.add_parser('list', help='List all rate limits')
 
 
+    
+    # Traffic logging commands
+    logging_parser = subparsers.add_parser('logging', help='Traffic logging commands')
+    logging_subparsers = logging_parser.add_subparsers(dest='logging_command', help='Traffic logging actions')
+    logging_enable_parser = logging_subparsers.add_parser('enable', help='Enable traffic logging')
+    logging_enable_parser.add_argument('--ip', type=str, help='IP address to log')
+    logging_enable_parser.add_argument('--port', type=int, help='Port to log')
+    logging_enable_parser.add_argument('--protocol', type=str, default='tcp', help='Protocol to log (default: tcp)')
+    logging_disable_parser = logging_subparsers.add_parser('disable', help='Disable traffic logging')
+    logging_disable_parser.add_argument('--ip', type=str, help='IP address to stop logging')
+    logging_disable_parser.add_argument('--port', type=int, help='Port to stop logging')
+    logging_disable_parser.add_argument('--protocol', type=str, default='tcp', help='Protocol to stop logging (default: tcp)')
+    
     args = parser.parse_args()
 
     if args.category == 'packet':
@@ -71,6 +85,12 @@ def main():
             remove_rate_limit(args.ip)
         elif args.rate_command == 'list':
             list_rate_limits()
+            
+    elif args.category == 'logging':
+        if args.logging_command == 'enable':
+            enable_traffic_logging(args.ip, args.port, args.protocol)
+        elif args.logging_command == 'disable':
+            disable_traffic_logging(args.ip, args.port, args.protocol)
 
 if __name__ == '__main__':
     main()
