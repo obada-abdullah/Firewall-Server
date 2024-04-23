@@ -46,20 +46,6 @@ def main():
     rate_remove_parser = rate_subparsers.add_parser('remove', help='Remove a rate limit')
     rate_remove_parser.add_argument('ip', type=str, help='IP address to remove limit from')
     rate_list_parser = rate_subparsers.add_parser('list', help='List all rate limits')
-
-
-    
-    # Traffic logging commands
-    logging_parser = subparsers.add_parser('logging', help='Traffic logging commands')
-    logging_subparsers = logging_parser.add_subparsers(dest='logging_command', help='Traffic logging actions')
-    logging_enable_parser = logging_subparsers.add_parser('enable', help='Enable traffic logging')
-    logging_enable_parser.add_argument('--ip', type=str, help='IP address to log')
-    logging_enable_parser.add_argument('--port', type=int, help='Port to log')
-    logging_enable_parser.add_argument('--protocol', type=str, default='tcp', help='Protocol to log (default: tcp)')
-    logging_disable_parser = logging_subparsers.add_parser('disable', help='Disable traffic logging')
-    logging_disable_parser.add_argument('--ip', type=str, help='IP address to stop logging')
-    logging_disable_parser.add_argument('--port', type=int, help='Port to stop logging')
-    logging_disable_parser.add_argument('--protocol', type=str, default='tcp', help='Protocol to stop logging (default: tcp)')
     
     args = parser.parse_args()
 
@@ -85,12 +71,6 @@ def main():
             remove_rate_limit(args.ip)
         elif args.rate_command == 'list':
             list_rate_limits()
-            
-    elif args.category == 'logging':
-        if args.logging_command == 'enable':
-            enable_traffic_logging(args.ip, args.port, args.protocol)
-        elif args.logging_command == 'disable':
-            disable_traffic_logging(args.ip, args.port, args.protocol)
 
 if __name__ == '__main__':
     main()
