@@ -1,0 +1,143 @@
+Certainly! Let's build your firewall server in Python step-by-step. Given the complexity of this project, I'll guide you through setting up the project structure, implementing initial functionalities, and testing them. You will learn how to handle packet filtering, IP management, and logging.
+
+### Step 1: Setting Up the Project Environment
+
+First, ensure Python 3.6 or later is installed. Use a virtual environment for your project to manage dependencies.
+
+1. **Create a Virtual Environment**:
+   Open a terminal and run:
+
+   ```bash
+   python3 -m venv firewall_env
+   source firewall_env/bin/activate  # On Unix/Linux
+   firewall_env\Scripts\activate     # On Windows
+   ```
+
+2. **Install Required Libraries**:
+   You'll need `scapy` for packet manipulation and `netfilterqueue` to interact with iptables queue.
+
+   ```bash
+   pip install scapy netfilterqueue
+   ```
+
+### Step 2: Project Structure Setup
+
+Create the directory structure as discussed previously. You can use terminal commands or your file explorer to create these directories and files.
+
+### Step 3: Implementing Packet Filtering
+
+1. **Create the `packet_filter.py`**:
+   Navigate to the `src` directory, create `packet_filter.py`, and add the following code:
+
+   ```python
+   from scapy.all import IP, TCP
+
+   def filter_packet(packet):
+       # Block packets from a specific IP
+       if packet[IP].src == '192.168.1.100':
+           print("Blocking packet from IP: 192.168.1.100")
+           return False
+       # Allow HTTP traffic
+       if packet[TCP].dport == 80:
+           print("Allowing HTTP traffic")
+           return True
+       return True
+   ```
+
+2. **Create the `main.py`**:
+   This file will set up the packet sniffing and utilize the `packet_filter`.
+
+   ```python
+   from scapy.all import sniff
+   from packet_filter import filter_packet
+
+   def start_firewall():
+       print("Firewall is running...")
+       sniff(filter="ip", prn=filter_packet, store=0)
+
+   if __name__ == '__main__':
+       start_firewall()
+   ```
+
+### Step 4: IP Blocking/Allowing using `iptables`
+
+1. **Create the `ip_manager.py`**:
+   This module will manage IP rules.
+
+   ```python
+   import subprocess
+
+   def modify_iptables(action, ip):
+       rule = f"sudo iptables -{action} INPUT -s {ip} -j DROP"
+       subprocess.run(rule, shell=True)
+
+   def block_ip(ip):
+       modify_iptables('A', ip)  # Add rule
+
+   def unblock_ip(ip):
+       modify_iptables('D', ip)  # Delete rule
+   ```
+
+### Step 5: Implement Logging
+
+1. **Create the `logger.py`**:
+   This module will handle logging functionalities.
+
+   ```python
+   import logging
+
+   logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+   def log_packet(packet_info):
+       logging.info(f"Packet info: {packet_info}")
+   ```
+
+2. **Integrate Logging in `packet_filter.py`**:
+   Add a call to the `log_packet` function from `logger.py` in `packet_filter.py`.
+
+   ```python
+   from logger import log_packet
+
+   def filter_packet(packet):
+       if packet[IP].src == '192.168.1.100':
+           log_packet("Blocking packet from IP: 192.168.1.100")
+           return False
+       return True
+   ```
+
+### Step 6: Testing Your Firewall
+
+1. **Writing Simple Tests**:
+   Navigate to the `tests` directory and create `test_packet_filter.py`.
+
+   ```python
+   from scapy.all import IP, TCP, Ether
+   from src.packet_filter import filter_packet
+
+   def test_filter_packet():
+       # Create a dummy packet
+       packet = IP(src="192.168.1.100")/TCP(dport=80)
+       # Test IP blocking
+       assert filter_packet(packet) == False
+
+       # Create another dummy packet
+       packet = IP(src="192.168.1.101")/TCP(dport=80)
+       # Test HTTP allowance
+       assert filter_packet(packet) == True
+   ```
+
+2. **Run the Tests**:
+   Use `pytest` or simply run your test script in Python to ensure the functionality works as expected.
+
+### Step 7: Documenting Your Project
+
+Write documentation in the `docs/` directory, explaining how each part of your firewall works and how to configure or extend it.
+
+### Final Notes
+
+- Always test your code in a safe environment.
+- You may need superuser rights to modify iptables and run network-related
+
+ operations.
+
+This guide covers the initial setup and basic functionalities. As you progress, you can further develop and refine each component based on your project's requirements.

@@ -1,1 +1,4 @@
-ECHO is on.
+"""
+Initialize Python package.
+"""
+
