@@ -2,8 +2,10 @@ import argparse
 from packet_filter import add_rule, remove_rule, list_rules
 from port_manager import add_port_rule, remove_port_rule, list_port_rules
 from rate_limiter import add_rate_limit, remove_rate_limit, list_rate_limits
+from packet_organizer import run_processing
 
-def main():
+def main(): 
+    
     parser = argparse.ArgumentParser(description="Manage Firewall Rules")
     subparsers = parser.add_subparsers(dest='category', help='commands')
 
@@ -45,8 +47,14 @@ def main():
     rate_remove_parser.add_argument('ip', type=str, help='IP address to remove limit from')
     rate_list_parser = rate_subparsers.add_parser('list', help='List all rate limits')
     
-    args = parser.parse_args()
+    
+    # managing packets
+    packet_parser = subparsers.add_parser('packet', help='Packet management commands')
+    packet_subparsers = packet_parser.add_subparsers(dest='command', help='Packet management actions')
 
+    
+    args = parser.parse_args()
+    
     if args.category == 'packet':
         if args.command == 'add':
             add_rule(args.ip, args.action)
@@ -54,15 +62,15 @@ def main():
             remove_rule(args.ip, args.action)
         elif args.command == 'list':
             list_rules()
-            
+                
     elif args.category == 'port':
         if args.port_command == 'add':
-            add_port_rule(args.port, args.action)
+                add_port_rule(args.port, args.action)
         elif args.port_command == 'remove':
             remove_port_rule(args.port, args.action)
         elif args.port_command == 'list':
             list_port_rules()
-    
+        
     elif args.category == 'rate':
         if args.rate_command == 'add':
             add_rate_limit(args.ip, args.rate, args.limit_burst)
