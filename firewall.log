@@ -1,0 +1,90 @@
+2024-04-25 05:15:20 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 05:15:25 - INFO - Listed all active iptables rules
+2024-04-25 05:16:01 - INFO - Listed all active iptables rules
+2024-04-25 05:16:04 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 05:16:12 - INFO - Listed all active iptables rules
+2024-04-25 05:18:16 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 05:18:22 - INFO - Listed all active iptables rules
+2024-04-25 05:36:55 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 05:37:11 - INFO - Listed all active iptables rules
+2024-04-25 05:43:48 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 05:44:35 - INFO - Listed all active iptables rules
+2024-04-25 05:47:46 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 05:48:00 - INFO - Listed all active iptables rules
+2024-04-25 05:49:13 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 05:49:18 - INFO - Listed all active iptables rules
+2024-04-25 05:49:54 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 05:51:03 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 05:51:04 - INFO - Listed all active iptables rules
+2024-04-25 05:51:46 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 05:51:47 - INFO - Listed all active iptables rules
+2024-04-25 05:54:03 - INFO - Listed all port rules
+2024-04-25 05:54:16 - INFO - Rule added: DROP traffic on port 80
+2024-04-25 05:54:17 - INFO - Listed all port rules
+2024-04-25 05:56:31 - INFO - Rule added: DROP traffic on port 80
+2024-04-25 05:56:32 - INFO - Listed all port rules
+2024-04-25 05:56:37 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 05:56:40 - INFO - Listed all active iptables rules
+2024-04-25 05:58:41 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 05:58:43 - INFO - Listed all active iptables rules
+2024-04-25 10:30:45 - ERROR - Failed to add rule: DROP all traffic from 192.168.1.110. Error: Command '['sudo', 'iptables', '-A', 'INPUT', '-s', '192.168.1.110', '-j', 'DROP']' returned non-zero exit status 1.
+2024-04-25 11:34:06 - ERROR - Failed to list iptables rules. Error: Command '['sudo', 'iptables', '-L']' returned non-zero exit status 1.
+2024-04-25 11:34:23 - ERROR - Failed to add rule: DROP all traffic from 192.168.1.110. Error: Command '['sudo', 'iptables', '-A', 'INPUT', '-s', '192.168.1.110', '-j', 'DROP']' returned non-zero exit status 1.
+2024-04-25 11:34:56 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 11:34:59 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 11:35:03 - INFO - Rule added: ACCEPT all traffic from 192.168.1.110
+2024-04-25 11:36:23 - INFO - Rule added: ACCEPT all traffic from 192.168.1.110
+2024-04-25 11:37:17 - INFO - Listed all active iptables rules
+2024-04-25 11:46:11 - INFO - Listed all port rules
+2024-04-25 11:46:19 - INFO - Listed all active iptables rules
+2024-04-25 11:46:31 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:33 - INFO - Listed all active iptables rules
+2024-04-25 11:46:38 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:40 - INFO - Listed all active iptables rules
+2024-04-25 11:46:43 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:44 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:44 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:45 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:45 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:46 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:46 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:46 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:47 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:47 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:48 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:48 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:49 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:46:49 - ERROR - Failed to remove rule: DROP all traffic from 192.168.1.110. Error: Command 'sudo iptables -D INPUT -s 192.168.1.110 -j DROP' returned non-zero exit status 1.
+2024-04-25 11:46:50 - ERROR - Failed to remove rule: DROP all traffic from 192.168.1.110. Error: Command 'sudo iptables -D INPUT -s 192.168.1.110 -j DROP' returned non-zero exit status 1.
+2024-04-25 11:46:53 - INFO - Listed all active iptables rules
+2024-04-25 11:47:06 - ERROR - Failed to remove rule: DROP all traffic from 192.168.1.10. Error: Command 'sudo iptables -D INPUT -s 192.168.1.10 -j DROP' returned non-zero exit status 1.
+2024-04-25 11:47:10 - INFO - Rule removed: DROP all traffic from 192.168.1.100
+2024-04-25 11:47:10 - INFO - Rule removed: DROP all traffic from 192.168.1.100
+2024-04-25 11:47:11 - ERROR - Failed to remove rule: DROP all traffic from 192.168.1.100. Error: Command 'sudo iptables -D INPUT -s 192.168.1.100 -j DROP' returned non-zero exit status 1.
+2024-04-25 11:47:15 - ERROR - Failed to remove rule: ACCEPT all traffic from 192.168.1.100. Error: Command 'sudo iptables -D INPUT -s 192.168.1.100 -j ACCEPT' returned non-zero exit status 1.
+2024-04-25 11:47:19 - INFO - Rule removed: ACCEPT all traffic from 192.168.1.110
+2024-04-25 11:47:20 - ERROR - Failed to remove rule: ACCEPT all traffic from 192.168.1.110. Error: Command 'sudo iptables -D INPUT -s 192.168.1.110 -j ACCEPT' returned non-zero exit status 1.
+2024-04-25 11:47:25 - INFO - Listed all active iptables rules
+2024-04-25 11:48:06 - ERROR - Failed to remove rule: DROP all traffic from 192.168.1.110. Error: Command 'sudo iptables -D INPUT -s 192.168.1.110 -j DROP' returned non-zero exit status 1.
+2024-04-25 11:48:12 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 11:48:19 - INFO - Listed all active iptables rules
+2024-04-25 11:59:32 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 11:59:34 - INFO - Listed all active iptables rules
+2024-04-25 12:00:44 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 12:01:59 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 12:02:00 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 12:02:42 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 12:02:43 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 12:02:45 - INFO - Listed all active iptables rules
+2024-04-25 13:10:37 - INFO - Listed all active iptables rules
+2024-04-25 14:27:37 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 14:27:43 - INFO - Listed all active iptables rules
+2024-04-25 14:28:00 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 14:28:03 - INFO - Listed all active iptables rules
+2024-04-25 14:28:22 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 14:28:30 - INFO - Listed all active iptables rules
+2024-04-25 14:29:39 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 14:29:45 - INFO - Listed all active iptables rules
+2024-04-25 14:30:07 - INFO - Listed all active iptables rules
+2024-04-25 14:32:10 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 14:32:46 - INFO - Rule added: DROP all traffic from 192.168.1.110

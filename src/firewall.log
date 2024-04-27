@@ -1,0 +1,20 @@
+2024-04-22 19:20:21 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-22 19:20:51 - INFO - Rule added: ACCEPT all traffic from 192.168.1.110
+2024-04-22 19:21:15 - INFO - Rule removed: ACCEPT all traffic from 192.168.1.110
+2024-04-22 19:21:22 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 04:51:36 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 04:51:50 - INFO - Listed all active iptables rules
+2024-04-25 04:52:36 - INFO - Listed all active iptables rules
+2024-04-25 04:52:42 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 04:52:44 - INFO - Listed all active iptables rules
+2024-04-25 04:53:38 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 04:53:57 - INFO - Listed all port rules
+2024-04-25 04:54:14 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 04:54:21 - INFO - Rule added: DROP traffic on port 80
+2024-04-25 04:54:26 - INFO - Listed all port rules
+2024-04-25 04:56:05 - INFO - Rule removed: DROP all traffic from 192.168.1.110
+2024-04-25 04:56:17 - INFO - Listed all active iptables rules
+2024-04-25 04:56:24 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-25 04:56:36 - INFO - Listed all active iptables rules
+2024-04-25 04:57:51 - INFO - Rule added: DROP all traffic from 192.168.1.100
+2024-04-25 04:58:02 - INFO - Listed all active iptables rules
