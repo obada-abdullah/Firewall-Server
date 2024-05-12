@@ -88,3 +88,14 @@
 2024-04-25 14:30:07 - INFO - Listed all active iptables rules
 2024-04-25 14:32:10 - INFO - Rule added: DROP all traffic from 192.168.1.110
 2024-04-25 14:32:46 - INFO - Rule added: DROP all traffic from 192.168.1.110
+2024-04-30 06:11:38 - INFO - Rule added: DROP all traffic from 192.168.1.100
+2024-04-30 06:11:48 - INFO - Listed all active iptables rules
+2024-04-30 06:16:31 - INFO - Rule added: DROP traffic on port 80
+2024-04-30 06:16:35 - INFO - Rule added: DROP traffic on port 80
+2024-04-30 06:16:40 - INFO - Listed all port rules
+2024-04-30 06:20:53 - INFO - Rate limit rule added: 5/second for 192.168.1.100, burst 10
+2024-04-30 06:21:01 - INFO - Listed all rate limit rules
+2024-04-30 06:21:43 - INFO - Listed all rate limit rules
+2024-04-30 06:22:01 - INFO - Listed all rate limit rules
+2024-04-30 06:22:05 - INFO - Rate limit rule added: 5/second for 192.168.1.100, burst 10
+2024-04-30 06:22:07 - INFO - Listed all rate limit rules

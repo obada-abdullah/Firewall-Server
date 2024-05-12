@@ -18,3 +18,5 @@
 2024-04-25 04:56:36 - INFO - Listed all active iptables rules
 2024-04-25 04:57:51 - INFO - Rule added: DROP all traffic from 192.168.1.100
 2024-04-25 04:58:02 - INFO - Listed all active iptables rules
+2024-04-27 09:21:24 - INFO - Rule added: DROP all traffic from 192.168.1.50
+2024-04-27 09:21:31 - INFO - Listed all active iptables rules
