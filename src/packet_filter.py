@@ -3,7 +3,6 @@ from logger import log_info, log_error
 
 def add_rule(ip, action='DROP'):
     """Add a rule to block or allow an IP."""
-    #command = []
     try:
         subprocess.run(f'sudo iptables -A INPUT -s {ip} -j {action}', shell=True)
         log_info(f"Rule added: {action} all traffic from {ip}")
